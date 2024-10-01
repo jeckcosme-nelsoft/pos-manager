@@ -1,15 +1,8 @@
 <?php
 
+use App\Http\Controllers\terminalListController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('terminalListView'); });
 
-Route::get('/clientlist', function () {
-    return view('clientlistView');
-});
-
-Route::get('/terminallist/1000', function () {
-    return view('terminallistView');
-});
+Route::get('/terminalList/', [terminalListController::class, 'postCheckIfMallAccred']);
